@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 
-class Forum(models.Model):
+class Publicar(models.Model):
     autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     titulo = models.CharField(max_length=200)
     texto = models.TextField()
@@ -11,7 +11,7 @@ class Forum(models.Model):
     data_publicacao = models.DateTimeField(
             blank=True, null=True)
 
-    def publicar(self):
+    def publicando(self):
         self.data_publicacao = timezone.now()
         self.save()
 

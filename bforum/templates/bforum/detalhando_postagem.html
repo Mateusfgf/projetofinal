@@ -1,0 +1,29 @@
+{% extends 'bforum/base.html'%}
+
+{% block content%}
+ <div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+                <div class="post">
+
+                    {% if user.is_authenticated %}
+                     <h1><a href="{% url 'detalhando_postagem' pk=post.pk %}">{{ post.titulo }}</a></h1>
+                    {% endif %}
+
+                            <div class="date">
+                                {{ post.data_publicacao }}
+                            </div>
+
+                    
+                     <div class="date">
+
+                    </div>
+                    <p>{{ post.texto|linebreaksbr }}</p>
+                </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
+
+
